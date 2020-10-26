@@ -1,0 +1,161 @@
+<div class="parallax-content baner-content" id="home">
+    <div class="container">
+        <div class="text-content">
+            <h2><em>JEWELLERY</em> <span>SHOP....</span> STAFF</h2>
+            <p>Jewellery is a unique product category, which elicits strong emotions from potential buyers. If you’re selling jewellery online, your product descriptions are where you make the pitch to prospects.</p>
+            <div class="primary-white-button">
+                <a href="#" class="scroll-link" data-id="about">Best Product</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<div class="row">
+    <div class="col s1">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">                                                        selectedStaff
+                    <div class="col s3">
+                        <form #staffForm="ngForm"  (ngSubmit)="onSubmit(staffForm)" novalidate>
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="staffService.selectedStaff._id">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="staffService.selectedStaff.name" placeholder="Eg : Dalin Aranga"required>
+                                    <label>Name : 
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="position" #name="ngModel" [(ngModel)]="staffService.selectedStaff.position" placeholder="Eg : Manager">
+
+                                   <label>Position : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="age" #name="ngModel" [(ngModel)]="staffService.selectedStaff.age" placeholder="Eg : 24">
+                                   <label>Age : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="contact" #name="ngModel" [(ngModel)]="staffService.selectedStaff.contact" placeholder=" Eg : HR">
+                                   <label>Contact :  </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="address" #name="ngModel" [(ngModel)]="staffService.selectedStaff.address" placeholder="Eg : Tricomalee">
+                                   <label>Address : </label>
+                               </div>
+                           </div>
+                           
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <button class="btn btn-custom right" type="button" (click)="resetForm(staffForm)">Reset</button>
+                                   <button class="btn btn-custom right" type="submit" [disabled]="!staffForm.valid">Submit</button>
+                               </div>
+                           </div>
+                        </form>
+                    </div>
+                    <div class="col s9">
+                       <table class="responsive-table highlight">
+                           <thead>
+                             <tr>
+                               <th>Name</th>
+                               <th>Position</th>
+                               <th>Age</th>
+                               <th>Contact</th>
+                               <th>Address </th>
+                               <th></th>
+                             </tr>
+                           </thead>
+                           <tr *ngFor="let staffemp of staffService.staff">
+                             <td>{{staffemp.name}}</td>
+                             <td>{{staffemp.position}}</td>
+                             <td>{{staffemp.age}}</td>
+                             <td>{{staffemp.contact}}</td>
+                             <td>{{staffemp.address}}</td>
+                             
+                             <td>
+                                 <a class="action-btn" (click)="onEdit(staffemp)">
+                                   <i class="material-icons">edit</i>
+                                 </a>
+                                 <a class="action-btn" (click)="onDelete(staffemp._id,staffForm)">
+                                   <i class="material-icons">delete</i>
+                                 </a>
+                               </td>
+                           </tr>
+                         </table>
+                        
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="logo">
+                    <a class="logo-ft scroll-top" href="#"><em>J</em>SHOP</a>
+                    <p>Web Application Project &copy; Siwrathna L.R.L.D
+                   <br>REG NO: EG/2017/3247</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="location">
+                    <h4>Location</h4>
+                    <ul>
+                        <li>ANURADHAPURA </li>
+                        <li>SRI LANKA </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="contact-info">
+                    <h4>More Info</h4>
+                    <ul>
+                        <li><em>Phone</em>: 0711891524</li>
+                        <li><em>Email</em>: devindiSiwrathna@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="connect-us">
+                    <h4>Get Social with me</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-google"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

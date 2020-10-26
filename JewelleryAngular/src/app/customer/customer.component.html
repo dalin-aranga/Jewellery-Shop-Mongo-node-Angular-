@@ -1,0 +1,168 @@
+<div class="parallax-content baner-content" id="home">
+    <div class="container">
+        <div class="text-content">
+            <h2><em>JEWELLERY</em> <span>SHOP....</span> CuSTOMERS</h2>
+            <p>Jewellery is a unique product category, which elicits strong emotions from potential buyers. If you’re selling jewellery online, your product descriptions are where you make the pitch to prospects.</p>
+            <div class="primary-white-button">
+                <a href="#" class="scroll-link" data-id="about">Best Product</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<div class="row">
+    <div class="col s1">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s3">
+                        <form #customerForm="ngForm"  (ngSubmit)="onSubmit(customerForm)" novalidate>
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="customerService.selectedCustomer._id">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.name" placeholder="Eg : Devindi Siwrathna"required>
+                                    <label>Name : 
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="date" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.date" placeholder="Eg : 2020/10/27">
+  
+                                   <label>Order Date : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="contact" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.contact" placeholder="EG: By Mother">
+                                   <label>Conatct : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="phoneNumber" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.phoneNumber" placeholder=" Eg : 0712099943">
+                                   <label>Phone Number :  </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="address" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.address" placeholder="Eg : Anuradhapur">
+                                   <label>Address : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <input type="text" name="total_price" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.total_price" placeholder=" Eg : 20000">
+                                   <label>Total Price : </label>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="input-field col s6">
+                                   <button class="btn btn-custom right" type="button" (click)="resetForm(customerForm)">Reset</button>
+                                   <button class="btn btn-custom right" type="submit" (click)="onSubmit(customerForm)" [disabled]="!customerForm.valid">Submit</button>
+                               </div>
+                           </div>
+                        </form>
+                    </div>
+                    <div class="col s9">
+                       <table class="responsive-table highlight">
+                           <thead>
+                             <tr>
+                               <th>Name</th>
+                               <th>Order Date </th>
+                               <th>Contact</th>
+                               <th>Phone Number</th>
+                               <th>Address </th>
+                               <th>Total Price</th>
+                               <th></th>
+                             </tr>
+                           </thead>
+                           <tr *ngFor="let customeremp of customerService.customer">
+                             <td>{{customeremp.name}}</td>
+                             <td>{{customeremp.date}}</td>
+                             <td>{{customeremp.contact}}</td>
+                             <td>{{customeremp.phoneNumber}}</td>
+                             <td>{{customeremp.address}}</td>
+                             <td>{{customeremp.total_price}}</td>
+                             <td>
+                                 <a class="action-btn" (click)="onEdit(customeremp)">
+                                   <i class="material-icons">edit</i>
+                                 </a>
+                                 <a class="action-btn" (click)="onDelete(customeremp._id,customerForm)">
+                                   <i class="material-icons">delete</i>
+                                 </a>
+                               </td>
+                           </tr>
+                         </table>
+                        
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="logo">
+                    <a class="logo-ft scroll-top" href="#"><em>J</em>SHOP</a>
+                    <p>Web Application Project &copy; Siwrathna L.R.L.D
+                   <br>REG NO: EG/2017/3247</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="location">
+                    <h4>Location</h4>
+                    <ul>
+                        <li>ANURADHAPURA </li>
+                        <li>SRI LANKA </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="contact-info">
+                    <h4>More Info</h4>
+                    <ul>
+                        <li><em>Phone</em>: 0711891524</li>
+                        <li><em>Email</em>: devindiSiwrathna@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="connect-us">
+                    <h4>Get Social with me</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-google"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

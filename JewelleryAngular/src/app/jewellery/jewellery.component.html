@@ -1,0 +1,147 @@
+<div class="parallax-content baner-content" id="home">
+    <div class="container">
+        <div class="text-content">
+            <h2><em>JEWELLERY</em> <span>SHOP....</span> JEWELLERY</h2>
+            <p>Jewellery is a unique product category, which elicits strong emotions from potential buyers. If you’re selling jewellery online, your product descriptions are where you make the pitch to prospects.</p>
+            <div class="primary-white-button">
+                <a href="#" class="scroll-link" data-id="about">Best Product</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<div class="row">
+    <div class="card" style="width: 18rem; " *ngFor="let jewelleryemp of jewelleryService.jewellery">
+        <img src="../../assets/Images/sabrinna-ringquist-NhrcL_C0sFA-unsplash.jpg" class="card-img-top" alt="...">
+        <div class="card-body" >
+        
+            <h6 class="card-title">Item Name: {{jewelleryemp.name}}</h6>
+            <h4 class="card-title">Item Type : {{jewelleryemp.type}}</h4>
+            <h4 class="card-title">Item Size : {{jewelleryemp.size}}</h4>
+            <h4 class="card-title"> Item Color : {{jewelleryemp.color}}</h4>
+            <h4 class="card-title"> Item Price : {{jewelleryemp.price}}</h4>
+
+            <button style="margin: 20px;" class="btn btn-custom right" type="button" (click)="onDelete(furnitureemp._id,furnitureForm)">Delete</button>
+            <button style="margin: 20px;" class="btn btn-custom right" type="button" (click)="onEdit(furnitureemp)">Edit</button>
+        
+        </div>
+    </div>
+    
+</div>
+<form #jewelleryForm="ngForm" (ngSubmit) = "onSubmit(jewelleryForm)" novalidate>
+    <div class="col s6">
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="jewelleryService.selectedJewellery._id">
+            <div class="row">
+                <div class="input-field col s6">
+                <input style="font-weight: bold; margin-top: 10px;"  name="name" #name="ngModel" [(ngModel)]="jewelleryService.selectedJewellery.name"type="text" placeholder="Eg : Ring">
+                <label style="font-weight: bold; font-size: 2rem;" class="active" for="first_name2">Item Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                <input style="font-weight: bold; margin-top: 10px;" name="type"    #name="ngModel" [(ngModel)]="jewelleryService.selectedJewellery.type" type="text"  placeholder="Eg : Hand">
+                <label style="font-weight: bold; font-size: 2rem;" class="active" for="first_name2">Item Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                <input style="font-weight: bold; margin-top: 10px;" name="size"  #name="ngModel" [(ngModel)]="jewelleryService.selectedJewellery.size" type="text"  placeholder="Eg : Small">
+                <label style="font-weight: bold; font-size: 2rem;" class="active" for="first_name2">Item Size</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                <input style="font-weight: bold; margin-top: 10px;" name="color"   #name="ngModel" [(ngModel)]="jewelleryService.selectedJewellery.color" type="text"  placeholder="Eg : Red">
+                <label style="font-weight: bold; font-size: 2rem;" class="active" for="first_name2">Item Color</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                <input style="font-weight: bold; margin-top: 10px;"  name="price"    #name="ngModel" [(ngModel)]="jewelleryService.selectedJewellery.price" type="text" placeholder="Eg : Rs135000">
+                <label style="font-weight: bold; font-size: 2rem;" class="active" for="first_name2">Item Price</label>
+                </div>
+            </div>
+    
+
+        
+            <div class="file-field input-field">
+            <div class="btn">
+                <span> Upload Image</span>
+                <input type="file" multiple>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+            </div>
+            </div>
+       
+ 
+        <div class="row">
+            <button class="btn btn-custom " style="margin-left: 400px; margin-top: 30px; margin-bottom: 30px;font-size:x-large; border: 30px; width: 200px; " (click)="resetForm(jewelleryForm)" type="button" >Reset</button>
+            <button class="btn btn-custom " style="margin-left: 400px; margin-top: 30px; margin-bottom: 30px;font-size:x-large; border: 30px; width: 200px; "(click)="onSubmit(jewelleryForm)" type="submit" [disabled]="!jewelleryForm.valid" >Submit</button> 
+        </div>
+    </div>
+</form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="logo">
+                    <a class="logo-ft scroll-top" href="#"><em>J</em>SHOP</a>
+                    <p>Web Application Project &copy; Siwrathna L.R.L.D
+                   <br>REG NO: EG/2017/3247</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="location">
+                    <h4>Location</h4>
+                    <ul>
+                        <li>ANURADHAPURA </li>
+                        <li>SRI LANKA </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="contact-info">
+                    <h4>More Info</h4>
+                    <ul>
+                        <li><em>Phone</em>: 0711891524</li>
+                        <li><em>Email</em>: devindiSiwrathna@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12">
+                <div class="connect-us">
+                    <h4>Get Social with me</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-google"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.facebook.com/achini.liyanage.96"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
